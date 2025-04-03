@@ -1,0 +1,29 @@
+---
+title: "Leaving Substack"
+published: "April 3rd, 2025"
+updated: "April 3rd, 2025"
+layout: ../../layouts/BlogPost.astro
+---
+
+I've been reading Tangible Thinking by Sanj Sirpal (a fellow Oakvillian!) and it has made me question my approach to my creative process. Central to his thesis for creativity is that creativity and productivity are opposed. Whereas one enables an opening of possibilities, the other constrains the set of possible outcomes. Part of what he discusses is that digital mediums create friction, whereas analog have far less. As much as I love Notion, writing notes in Notion is far more constrained than writing notes on cue cards. There's a time and place for both - but often we don't reach for the cue cards in the spirit of being "organized", or building a second brain (whatever that means).
+
+I've never been much of an analog tool user. The piano I grew up playing (Roland XXX) was digital, and had built in synthesizers, metronomes, and a fully fledged DAW (Digital Audio Workstation) inside. It was too confusing so I never quite learned how to use it, but this must have shifted my mental model for how tools worked. Why would I use an analog metronome if the digital one worked great and was far more practical? Instead of joining bands and making music with others, I regressed into my own world of making music digitally by myself, where all the sounds and synthesizers in the world would be available to me.
+
+[marcelo at his old studio]
+
+Since then I unfortunately haven't changed much. I still don't write anything down on paper, and even though I have purchased a nice pen with the idea of writing more, I haven't been able to come around completely. Although I love Sanjiv's ideas regarding opening and expressing ideas through atomic cue cards, I find myself locked into this digital world where everything moves faster. It's where I'm comfortable.
+
+I have however fallen in love with Obsidian. @aarnphm mentioned Kepano at one of @hussamfyi walk and talks last year, and we discussed the fundamental premise of file-over-app. It had never occurred to me that owning your data far after a business died was important to some people. Most of my life I had relied on cloud services and abstractions. When I finally got started with the tool, I faced growing pains. If I wanted a table I had to write markdown, or use this strange plugins that runs inline JavaScript. if I wanted to add properties to a page I needed to add this weird thing called fronmatter. All of it was unnecessarily complicated and I felt *constrained* me as opposed to liberating me. 
+
+It was only until after many months of using the tool did it all start to click. All my life I had relied on abstractions to do my tasks. "There's an app for that" was something I found myself saying less and less. What if I could just work at granular detail, and use *the thing*, instead of some abstraction layer overtop of the thing. Although for a lot of people this sounds quite rudimentary, it was a big paradigm shift for me.
+
+Once I reached digital liberation in Obsidian I found that some of the other tools I was using no longer served me. I started working in neovim instead of JetBrains - I liked the control I had over every minute detail (yes I spent a weekend tweaking my neovim configs). I ditched Notion altogether. I got proficient with my terminal and am able to execute most system tasks through the terminal. I became a digital conoisseur, sifting through things I liked and worked well, versus products and tools that lacked craftsmanship. Anyone who failed to pay attention to the small details was no longer worth my time. My laptop is my blade and my temple, I will not permit myself to use poor things in the name of productivity or anything like it.
+
+During this time I was writing on Substack. I handled everything for me, with nice customization options, and other things of that nature. Eventually I began to dread writing on the platform. Everything felt so high-stakes. I couldn't just sit and write whatever came to mind. I needed to write a "post", I could schedule it, it would be sent to my "subscribers". Although this is perfect for someone running a business on newsletters, that is not what I wanted to do. I wanted my writing, my choices, my fonts, my everything to be dictated by me as an expression of who I am digitally. And so slowly I stopped writing. I stagnated because *an abstraction* had more to say about my writing than I did. I was no longer sitting in my bed and writing markdown in the spirit of clarifying my ideas. I had to write a "post". The intentionality unwittingly placed me in a position of hyper-productivity and outcome oriented, which stifled the creative expression and play of the writing itself.
+
+And thus I have started this blog. I started it because as I mature as a digital thinker (as Hussam puts it), I dislike abstractions. **Abstractions always cost something**. I want to regain control of my digital expression, and I want to write freely as needed. I don't like that Substack calls a body of text I have written a "post". I will call it what i want. Today it is an article. Tomorrow it is newspaper. Yesterday it was a markdown file.
+
+Thank you for reading the first of many markdown files. 
+
+Best,
+Marcelo
