@@ -8,6 +8,9 @@ I've been reading Tangible Thinking by Sanj Sirpal (a fellow Oakvillian!) and it
 
 I've never been much of an analog tool user. The piano I grew up playing (Roland XXX) was digital, and had built in synthesizers, metronomes, and a fully fledged DAW (Digital Audio Workstation) inside. It was too confusing so I never quite learned how to use it, but this must have shifted my mental model for how tools worked. Why would I use an analog metronome if the digital one worked great and was far more practical? Instead of joining bands and making music with others, I regressed into my own world of making music digitally by myself, where all the sounds and synthesizers in the world would be available to me.
 
+[Marcelo at his old studio](/images/old-studio.jpg)
+
+
 [marcelo at his old studio]
 
 Since then I unfortunately haven't changed much. I still don't write anything down on paper, and even though I have purchased a nice pen with the idea of writing more, I haven't been able to come around completely. Although I love Sanjiv's ideas regarding opening and expressing ideas through atomic cue cards, I find myself locked into this digital world where everything moves faster. It's where I'm comfortable.
