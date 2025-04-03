@@ -52,3 +52,15 @@ main {
 .prose p strong {
   font-weight: 600;
 }
+
+.prose h1 {
+  margin-top: 3rem;
+}
+
+.prose h2 {
+  margin-top: 2.3rem;
+}
+
+.prose h3 {
+  margin-top: 2rem;
+}
