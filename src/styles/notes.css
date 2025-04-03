@@ -27,15 +27,18 @@ main {
   margin: 0 auto;
 }
 
-  
-
 @media (min-width: 940px) {
   .prose-container {
     width: 900px;
     margin: 0 auto;
-    padding: 0 1em;
-    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
+  }
+
+  .prose {
+    max-width: 640px;
+    margin: 0;
   }
 }
 
