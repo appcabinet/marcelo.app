@@ -6,16 +6,38 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1rem 2rem;
-		border-bottom: 1px solid var(--border);
+		height: 4rem;
+	}
+
+	@media (max-width: 720px) {
+		nav {
+			height: 3rem;
+		}
 	}
 	
+	nav p {
+		margin: 0;
+	}
+
 	nav a {
+		color: var(--text-light);
+		font-size: var(--text-size-default);
 		text-decoration: none;
 	}
+	nav a:nth-child(2) {
+		opacity: 0.65;
+	}
+	nav a:hover {
+		opacity: 1;
+		color: var(--accent);
+	}
+
 </style>
 
 <nav>
-	<a href="/">Home</a>
-	<a href="/about">About</a>
+	<p>
+		<a href="/" class="nav-marcelo">Marcelo</a>
+		&nbsp;/&nbsp;
+		<a href="/writing">Writing</a>
+	</p>
 </nav>
