@@ -1,23 +1,39 @@
 main {
   max-width: 100%;
-
 }
+
 .article-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   font-weight: 400;
-  margin-top: 7rem;
-  margin-bottom: 6rem;
+  margin-top: 11rem;
+  margin-bottom: 3rem;
 }
-.article-header p {
+
+@media (max-width: 720px) {
+  .article-header {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.article-header .title {
+  font-size: 2.2rem;
+  line-height: 1.1;
+  color: var(--text-light);
+  font-weight: 600;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .article-header .date {
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: 1.15rem;
+  line-height: 1.7;
   color: var(--accent);
+  margin-top: 0.4rem;
+  font-weight: 400;
 }
 
 .prose {
@@ -55,12 +71,18 @@ main {
 
 .prose h1 {
   margin-top: 3rem;
+  color: var(--text-light);
+  font-weight: 600;
 }
 
 .prose h2 {
   margin-top: 2.3rem;
+  color: var(--text-light);
+  font-weight: 600;
 }
 
 .prose h3 {
   margin-top: 2rem;
+  color: var(--text-light);
+  font-weight: 600;
 }

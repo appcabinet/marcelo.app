@@ -1,5 +1,5 @@
 ---
-title: "Leaving Substack"
+title: "About The Time I Lost Everything"
 published: "2025-04-03"
 updated: "2025-04-03"
 ---
