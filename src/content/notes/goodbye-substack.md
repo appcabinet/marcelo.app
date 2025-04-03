@@ -1,8 +1,7 @@
 ---
 title: "Leaving Substack"
-published: "April 3rd, 2025"
-updated: "April 3rd, 2025"
-layout: ../../layouts/BlogPost.astro
+published: "2025-04-03"
+updated: "2025-04-03"
 ---
 
 I've been reading Tangible Thinking by Sanj Sirpal (a fellow Oakvillian!) and it has made me question my approach to my creative process. Central to his thesis for creativity is that creativity and productivity are opposed. Whereas one enables an opening of possibilities, the other constrains the set of possible outcomes. Part of what he discusses is that digital mediums create friction, whereas analog have far less. As much as I love Notion, writing notes in Notion is far more constrained than writing notes on cue cards. There's a time and place for both - but often we don't reach for the cue cards in the spirit of being "organized", or building a second brain (whatever that means).
