@@ -8,7 +8,7 @@ main {
   justify-content: space-between;
   align-items: flex-start;
   font-weight: 400;
-  margin-top: 10rem;
+  margin-top: 8rem;
   margin-bottom: 3rem;
 }
 
@@ -31,7 +31,7 @@ main {
 .article-header .date {
   font-size: 1.15rem;
   line-height: 1.7;
-  color: var(--accent);
+  color: var(--accent-dark);
   margin-top: 0.4rem;
   font-weight: 400;
 }

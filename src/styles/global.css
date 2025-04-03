@@ -5,7 +5,6 @@
  */
 
 :root {
-	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -20,6 +19,7 @@
 	--text: #1C1C1C;
 	--text-light: #292929;
 	--accent: #EE7C2F;
+	--accent-dark: #ED701D;
 
 	/* Text sizes*/
 	--text-size-default: 1.2rem;
