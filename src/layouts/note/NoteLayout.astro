@@ -1,5 +1,6 @@
 ---
 import '../../styles/notes.css';
+import '@fontsource-variable/lora';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 
@@ -11,12 +12,21 @@ const { title, description, published, updated, tags } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<style>
+			body {
+				font-family: 'Lora Variable', serif;
+			}
+			.title {
+				font-weight: 600;
+			}
+		</style>
 	</head>
 
 	<body>
 		<main>
 			<article>
 				<div class="prose">
+					<p class="title">{title}</p>
 					<slot />
 				</div>
 			</article>
