@@ -1,7 +1,6 @@
 main {
-  width: calc(100% - 2em);
   max-width: 100%;
-  margin: 0;
+
 }
 .article-header {
   display: flex;
@@ -22,12 +21,24 @@ main {
 }
 
 .prose {
-  width: 680px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 1em;
-  color: rgb(var(--gray-dark));
+  max-width: 600px;
+  color: rgb(var(--text));
+  width: 100%;
+  margin: 0 auto;
 }
+
+  
+
+@media (min-width: 940px) {
+  .prose-container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 1em;
+    border: 1px solid red;
+    justify-content: flex-start;
+  }
+}
+
 .prose p {
   font-size: 1.2rem;
   line-height: 1.3;

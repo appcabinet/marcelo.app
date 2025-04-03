@@ -73,10 +73,8 @@ body::before {
 	font-display: swap;
 }
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
 	margin: auto;
-	padding: 3em 1em;
+	padding: 2em;
 	position: relative;
 	z-index: 2;
 }
@@ -156,11 +154,8 @@ hr {
 	border-top: 1px solid rgb(var(--gray-light));
 }
 @media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
 	main {
-		padding: 1em;
+		padding: 2em;
 	}
 }
 
