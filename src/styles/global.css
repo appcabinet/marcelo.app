@@ -20,6 +20,9 @@
 	--text: #1C1C1C;
 	--text-light: #292929;
 	--accent: #EE7C2F;
+
+	/* Text sizes*/
+	--text-size-default: 1.2rem;
 }
 
 html {

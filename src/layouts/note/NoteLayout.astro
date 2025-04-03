@@ -6,6 +6,8 @@ import '@fontsource/source-sans-pro/700.css';
 import '@fontsource/source-sans-pro/900.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import { ChevronLeft } from 'lucide-astro';
 
 type Props = CollectionEntry<'notes'>['data'];
 
@@ -24,14 +26,32 @@ const publishedString = new Date(published).toLocaleDateString('en-US', {
 			body {
 				font-family: 'Source Sans Pro', sans-serif;
 			}
+
+			.back-button {
+				display: inline-flex;
+				align-items: center;
+				color: var(--text-light);
+				text-decoration: none;
+				margin-bottom: 1rem;
+				transform: translateX(0);
+				transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.back-button:hover {
+				transform: translateX(-4px);
+			}
 		</style>
 	</head>
 
 	<body>
+		<Header />
 		<main>
 			<div class="prose-container">
 				<article class="prose">
 					<div class="article-header">
+						<!-- <a href="/writing" class="back-button">
+							<ChevronLeft size={24} />
+						</a> -->
 						<h1 class="title">{title}</h1>
 						<p class="date">{publishedString} • 3 min read</p>
 					</div>
