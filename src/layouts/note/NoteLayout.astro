@@ -1,16 +1,20 @@
 ---
 import '../../styles/notes.css';
-import '@fontsource-variable/lora';
-import '@fontsource/geist-sans/400.css';
-import '@fontsource/geist-sans/500.css';
-import '@fontsource/geist-sans/600.css';
-import '@fontsource/geist-sans/700.css';
+import '@fontsource/source-sans-pro/400.css';
+import '@fontsource/source-sans-pro/600.css';
+import '@fontsource/source-sans-pro/700.css';
+import '@fontsource/source-sans-pro/900.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 
 type Props = CollectionEntry<'notes'>['data'];
 
 const { title, description, published, updated, tags } = Astro.props;
+const publishedString = new Date(published).toLocaleDateString('en-US', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+});
 ---
 
 <html lang="en">
@@ -18,11 +22,7 @@ const { title, description, published, updated, tags } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<style>
 			body {
-				font-family: 'Geist Sans', sans-serif;
-				background-color: black;
-			}
-			.title {
-				font-weight: 600;
+				font-family: 'Source Sans Pro', sans-serif;
 			}
 		</style>
 	</head>
@@ -31,7 +31,10 @@ const { title, description, published, updated, tags } = Astro.props;
 		<main>
 			<article>
 				<div class="prose">
-					<p class="title">{title}</p>
+					<div class="article-header">
+						<p class="title">{title}</p>
+						<p class="date">{publishedString} • 3 min read</p>
+					</div>
 					<slot />
 				</div>
 			</article>
