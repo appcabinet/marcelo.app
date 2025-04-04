@@ -23,6 +23,7 @@ const notes = defineCollection({
 		updated: z.coerce.date().optional(),
 		tags: z.array(z.string()).optional(),
 		readingTime: z.string().optional(),
+		noteType: z.enum(['note', 'article', 'essay']).optional().default('note'),
 	}),
 });
 

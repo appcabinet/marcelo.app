@@ -44,12 +44,6 @@ const { directory, note_id } = Astro.props as Props;
 			font-size: var(--text-size-mobile) !important;
 		}
 	}
-
-	.nav-about {
-		opacity: 0.65;
-		display: flex;
-		gap: 1rem;
-	}
 </style>
 
 <nav>
@@ -67,8 +61,5 @@ const { directory, note_id } = Astro.props as Props;
 				<a href={`/${note_id}`}>{note_id}</a>
 			</>
 		)}
-	</p>
-	<p class="nav-about">
-		<a href="/about">about</a>
 	</p>
 </nav>
