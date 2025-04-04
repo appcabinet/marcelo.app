@@ -33,8 +33,25 @@ function formatDate(date: Date): string {
   .note-item .left {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    column-gap: 1rem;
+    row-gap: 0.4rem;
     line-height: 1;
+  }
+
+  @media (max-width: 720px) {
+    .notes-list {
+      gap: 1rem;
+    }
+    .note-item {
+      align-items: flex-start;
+    }
+    .note-item .left {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+    .note-item .left .date {
+      font-size: 0.9rem;
+    }
   }
 
   .note-item .date {
