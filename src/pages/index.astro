@@ -46,11 +46,6 @@ function formatDate(date: Date): string {
         align-items: flex-start;
       }
 
-      @media (max-width: 720px) {
-        .index-header {
-        }
-      }
-
       .index-header .title {
         font-size: 1.65rem;
         line-height: 1.1;
@@ -68,6 +63,16 @@ function formatDate(date: Date): string {
         text-wrap: normal;
         color: var(--text-light);
         margin: 0;
+      }
+
+      @media (max-width: 720px) {
+        .index-header .title {
+          font-size: 1.5rem;
+        }
+
+        .index-header .description {
+          font-size: 1.1rem;
+        }
       }
 
       
