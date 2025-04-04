@@ -1,6 +1,7 @@
 ---
 import '../../styles/notes.css';
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import AppHeader from '../../components/AppHeader.astro';
 import AppFooter from '../../components/AppFooter.astro';
@@ -16,6 +17,12 @@ const publishedString = new Date(published).toLocaleDateString('en-US', {
 	month: 'long',
 	day: 'numeric',
 });
+
+// Get random note, excluding current note
+const allNotes = await getCollection('notes');
+const otherNotes = allNotes.filter(note => note.id !== note_id);
+const randomNote = otherNotes[Math.floor(Math.random() * otherNotes.length)];
+const randomNoteId = randomNote.id;
 ---
 
 <html lang="en">
