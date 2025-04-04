@@ -1,58 +1,58 @@
 ---
 interface Props {
-    title: string;
-    publishedString: string;
-		readingTime?: string;
+  title: string;
+  publishedString: string;
+  readingTime?: string;
 }
 
 const { title, publishedString, readingTime } = Astro.props;
 ---
 
 <style>
+  .note-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-weight: 400;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 720px) {
     .note-header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        font-weight: 400;
-        margin-top: 8rem;
+        margin-top: 5rem;
         margin-bottom: 3rem;
     }
+  }
 
-    @media (max-width: 720px) {
-        .note-header {
-            margin-top: 5rem;
-            margin-bottom: 5rem;
-        }
-    }
+  .note-header .title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    color: var(--text-light);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
 
+  .note-header .date {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--accent-dark);
+    margin-top: 0.4rem;
+    font-weight: 400;
+  }
+
+  @media (max-width: 720px) {
     .note-header .title {
-        font-size: 2.2rem;
-        line-height: 1.1;
-        color: var(--text-light);
-        font-weight: 600;
-        margin: 0;
-        letter-spacing: -0.02em;
+      font-size: 1.8rem;
     }
 
     .note-header .date {
-        font-size: 1.15rem;
-        line-height: 1.7;
-        color: var(--accent-dark);
-        margin-top: 0.4rem;
-        font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.5;
     }
-
-		@media (max-width: 720px) {
-			.note-header .title {
-				font-size: 1.8rem;
-			}
-
-			.note-header .date {
-				font-size: 1.1rem;
-				line-height: 1.5;
-			}
-		}
+  }
 </style>
 
 <div class="note-header">
