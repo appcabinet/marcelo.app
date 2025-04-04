@@ -5,7 +5,7 @@ interface Props {
 		readingTime?: string;
 }
 
-const { title, publishedString } = Astro.props;
+const { title, publishedString, readingTime } = Astro.props;
 ---
 
 <style>
@@ -57,5 +57,5 @@ const { title, publishedString } = Astro.props;
 
 <div class="note-header">
     <h1 class="title">{title}</h1>
-    <p class="date">{publishedString} • 3 min read</p>
+    <p class="date">{publishedString} {readingTime && ` · ${readingTime}`}</p>
 </div>

@@ -6,6 +6,7 @@ import BaseHead from '../components/BaseHead.astro';
 import AppHeader from '../components/AppHeader.astro';
 import AppFooter from '../components/AppFooter.astro';
 import NoteList from '../components/note/NoteList.astro';
+import LatestNote from '../components/note/LatestNote.astro';
 
 // Get all notes and sort them by published date (newest first)
 const notes: CollectionEntry<'notes'>[] = (await getCollection('notes')).sort(
@@ -34,7 +35,7 @@ function formatDate(date: Date): string {
     />
     <style>
       .index-container {
-        max-width: 680px;
+        max-width: 620px;
         margin: 0 auto;
       }
 
@@ -56,8 +57,8 @@ function formatDate(date: Date): string {
         color: var(--text);
         font-weight: 600;
         margin: 0;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
       }
 
       .index-header .description {
@@ -66,6 +67,7 @@ function formatDate(date: Date): string {
         text-align: left;
         text-wrap: normal;
         color: var(--text-light);
+        margin: 0;
       }
 
       
@@ -99,16 +101,13 @@ function formatDate(date: Date): string {
           </p>
         </div>
 
-        <!-- <h2 class="section-title">Latest</h2>
-        <div class="latest-note">
-          <p class="date">{formatDate(latestNote.data.published)}</p>
-          <h2>
-            <a href={`/${latestNote.id}`}>{latestNote.data.title}</a>
-          </h2>
-          {latestNote.data.description && (
-            <p class="description">{latestNote.data.description}</p>
-          )}
-        </div> -->
+        <div class="index-divider" />
+
+        <div class="index-section">
+          <LatestNote note={latestNote} />
+        </div>
+
+        <div class="index-divider" />
 
         <div class="index-section">
           <h2 class="section-title">Notes</h2>
@@ -116,6 +115,7 @@ function formatDate(date: Date): string {
         </div>
 
         <div class="index-divider" />
+
         <AppFooter />
       </section>
     </main>
