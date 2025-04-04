@@ -9,13 +9,20 @@ const formSchema = z.object({
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    const data = await request.formData();
+    const data = await request.json();
     const result = formSchema.safeParse(data);
 
     if (!result.success) {
       return new Response(
         JSON.stringify({ error: result.error.errors[0].message }),
         { status: 400 }
+      );
+    }
+
+    if (import.meta.env.DEV) {
+      return new Response(
+        JSON.stringify({ success: true }),
+        { status: 200 }
       );
     }
 
@@ -40,6 +47,10 @@ export const POST: APIRoute = async ({ request }) => {
       { status: 200 }
     );
   } catch (error) {
+    console.error('Internal server error subscribing to newsletter', {
+      error,
+      request,
+    });
     return new Response(
       JSON.stringify({ error: "Internal server error" }),
       { status: 500 }
