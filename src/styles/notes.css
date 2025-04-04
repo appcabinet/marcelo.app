@@ -29,6 +29,7 @@ main {
   line-height: 1.35;
   text-align: justify;
   hyphens: auto;
+  margin: 1.5rem 0;
 }
 
 .prose p strong {
