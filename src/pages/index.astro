@@ -6,7 +6,6 @@ import BaseHead from '../components/BaseHead.astro';
 import AppHeader from '../components/AppHeader.astro';
 import AppFooter from '../components/AppFooter.astro';
 import NoteList from '../components/note/NoteList.astro';
-import '../styles/notes.css';
 
 // Get all notes and sort them by published date (newest first)
 const notes: CollectionEntry<'notes'>[] = (await getCollection('notes')).sort(
@@ -34,6 +33,11 @@ function formatDate(date: Date): string {
       description={SITE_DESCRIPTION}
     />
     <style>
+      .index-container {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
       .index-header {
         display: flex;
         flex-direction: column;
@@ -82,35 +86,33 @@ function formatDate(date: Date): string {
   </head>
   <body>
     <main>
-      <div class="prose-container">
-        <article class="prose">
-          <AppHeader />
-          <div class="index-header">
-            <h1 class="title">Marcelo Mantilla</h1>
-            <p class="description">
-              Hey! I'm Marcelo, a product engineer and creative writer based out of Toronto.
-              You've landed on my digital notebook, where I write notes, articles, and essays about things that interest me.
-            </p>
-          </div>
+      <section class="index-container">
+        <AppHeader />
+        <div class="index-header">
+          <h1 class="title">Marcelo Mantilla</h1>
+          <p class="description">
+            Hey! I'm Marcelo, a product engineer and creative writer based out of Toronto.
+            You've landed on my digital notebook, where I write notes, articles, and essays about things that interest me.
+          </p>
+        </div>
 
-          <!-- <h2 class="section-title">Latest</h2>
-          <div class="latest-note">
-            <p class="date">{formatDate(latestNote.data.published)}</p>
-            <h2>
-              <a href={`/${latestNote.id}`}>{latestNote.data.title}</a>
-            </h2>
-            {latestNote.data.description && (
-              <p class="description">{latestNote.data.description}</p>
-            )}
-          </div> -->
+        <!-- <h2 class="section-title">Latest</h2>
+        <div class="latest-note">
+          <p class="date">{formatDate(latestNote.data.published)}</p>
+          <h2>
+            <a href={`/${latestNote.id}`}>{latestNote.data.title}</a>
+          </h2>
+          {latestNote.data.description && (
+            <p class="description">{latestNote.data.description}</p>
+          )}
+        </div> -->
 
-          <h2 class="section-title">Notes</h2>
-          <NoteList notes={otherNotes} />
+        <h2 class="section-title">Notes</h2>
+        <NoteList notes={otherNotes} />
 
-          <div class="note-footer-divider" />
-          <AppFooter />
-        </article>
-      </div>
+        <div class="note-footer-divider" />
+        <AppFooter />
+      </section>
     </main>
   </body>
 </html>

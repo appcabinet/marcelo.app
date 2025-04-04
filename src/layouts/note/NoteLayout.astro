@@ -1,11 +1,11 @@
 ---
-import '../../styles/notes.css';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
 import AppHeader from '../../components/AppHeader.astro';
 import AppFooter from '../../components/AppFooter.astro';
 import NoteHeader from '../../components/note/NoteHeader.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import '../../styles/notes.css'; // Order of CSS imports is important
 
 type Props = CollectionEntry<'notes'>['data'] & {
   note_id?: string;
