@@ -1,9 +1,5 @@
 ---
 import '../../styles/notes.css';
-import '@fontsource/source-sans-pro/400.css';
-import '@fontsource/source-sans-pro/600.css';
-import '@fontsource/source-sans-pro/700.css';
-import '@fontsource/source-sans-pro/900.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import NoteHeader from '../../components/note/NoteHeader.astro';
@@ -22,9 +18,6 @@ const publishedString = new Date(published).toLocaleDateString('en-US', {
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			body {
-				font-family: 'Source Sans Pro', sans-serif;
-			}
 			.note-footer-divider {
 				height: 1px;
 				background-color: var(--background-core-dark);
