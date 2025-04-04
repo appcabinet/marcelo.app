@@ -3,7 +3,7 @@ import '../../styles/notes.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import AppHeader from '../../components/AppHeader.astro';
-import NoteFooter from '../../components/note/NoteFooter.astro';
+import AppFooter from '../../components/AppFooter.astro';
 import NoteHeader from '../../components/note/NoteHeader.astro';
 
 type Props = CollectionEntry<'notes'>['data'] & {
@@ -41,7 +41,8 @@ const publishedString = new Date(published).toLocaleDateString('en-US', {
 						readingTime={readingTime}
 					/>
 					<slot />
-					<NoteFooter />
+					<div class="note-footer-divider" />
+					<AppFooter />
 				</article>
 			</div>
 		</main>

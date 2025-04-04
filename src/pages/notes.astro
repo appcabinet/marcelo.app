@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import AppHeader from '../components/AppHeader.astro';
-import NoteFooter from '../components/note/NoteFooter.astro';
+import AppFooter from '../components/AppFooter.astro';
 import '../styles/notes.css';
 
 // Get all notes and sort them by published date (newest first)
@@ -24,7 +24,7 @@ function formatDate(date: Date): string {
 <html lang="en">
   <head>
     <BaseHead 
-      title="Writing | Marcelo Mantilla"
+      title="Notes | Marcelo Mantilla"
       description="Articles and essays by Marcelo Mantilla"
     />
     <style>
@@ -79,9 +79,9 @@ function formatDate(date: Date): string {
     <main>
       <div class="prose-container">
         <article class="prose">
-          <AppHeader />
+          <AppHeader directory='notes' />
           <div class="article-header">
-            <h1 class="title">Writing</h1>
+            <h1 class="title">Notes</h1>
             <p class="date">Essays and articles about software, creativity, and life</p>
           </div>
 
@@ -100,7 +100,7 @@ function formatDate(date: Date): string {
           </div>
 
           <div class="note-footer-divider" />
-          <NoteFooter />
+          <AppFooter />
         </article>
       </div>
     </main>

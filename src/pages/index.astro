@@ -1,49 +1,109 @@
 ---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
+import AppHeader from '../components/AppHeader.astro';
+import AppFooter from '../components/AppFooter.astro';
+import '../styles/notes.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-export const prerender = true;
+// Get all notes and sort them by published date (newest first)
+const notes: CollectionEntry<'notes'>[] = (await getCollection('notes')).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
+);
+
+// Format date to match the note page style
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
 ---
 
-<!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead 
+      title={SITE_TITLE}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      .writing-list {
+        margin-top: 2rem;
+      }
+
+      .writing-item {
+        margin-bottom: 2.5rem;
+      }
+
+      .writing-item h2 {
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin: 0;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .writing-item h2 a {
+        color: var(--text-light);
+        text-decoration: none;
+      }
+
+      .writing-item h2 a:hover {
+        color: var(--accent);
+      }
+
+      .writing-item .date {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: var(--accent-dark);
+        margin-top: 0.4rem;
+        font-weight: 400;
+      }
+
+      .writing-item .description {
+        font-size: var(--text-size-default);
+        line-height: 1.35;
+        margin-top: 0.8rem;
+        color: var(--text-light);
+      }
+
+      .note-footer-divider {
+        height: 1px;
+        background-color: var(--background-core-dark);
+        margin: 3rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="prose-container">
+        <article class="prose">
+          <AppHeader />
+          <div class="article-header">
+            <h1 class="title">Notes</h1>
+            <p class="date">Essays and articles about software, creativity, and life</p>
+          </div>
+
+          <div class="writing-list">
+            {notes.map((note) => (
+              <div class="writing-item">
+                <h2>
+                  <a href={`/${note.id}`}>{note.data.title}</a>
+                </h2>
+                <p class="date">{formatDate(note.data.published)}</p>
+                {note.data.description && (
+                  <p class="description">{note.data.description}</p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div class="note-footer-divider" />
+          <AppFooter />
+        </article>
+      </div>
+    </main>
+  </body>
 </html>
