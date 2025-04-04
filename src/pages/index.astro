@@ -1,24 +1,29 @@
 ---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import AppHeader from '../components/AppHeader.astro';
 import AppFooter from '../components/AppFooter.astro';
+import NoteList from '../components/note/NoteList.astro';
 import '../styles/notes.css';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 // Get all notes and sort them by published date (newest first)
 const notes: CollectionEntry<'notes'>[] = (await getCollection('notes')).sort(
   (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
 );
 
+// Get the latest note
+const latestNote = notes[0];
+const otherNotes = notes.slice(1);
+
 // Format date to match the note page style
 function formatDate(date: Date): string {
-  return date.toLocaleDateString('en-US', {
+  return new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
-    month: 'long',
+    month: '2-digit',
     day: 'numeric'
-  });
+  }).replace(/\//g, ' · ');
 }
 ---
 
@@ -29,48 +34,43 @@ function formatDate(date: Date): string {
       description={SITE_DESCRIPTION}
     />
     <style>
-      .writing-list {
-        margin-top: 2rem;
+      .index-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
       }
 
-      .writing-item {
-        margin-bottom: 2.5rem;
+      @media (max-width: 720px) {
+        .index-header {
+          margin-top: 5rem;
+          margin-bottom: 5rem;
+        }
       }
 
-      .writing-item h2 {
-        font-size: 1.8rem;
-        line-height: 1.1;
+      .index-header .title {
+        font-size: 1.3rem;
         margin: 0;
+        margin-bottom: 2rem;
+        line-height: 1.1;
+        color: var(--text);
         font-weight: 600;
-        letter-spacing: -0.02em;
       }
 
-      .writing-item h2 a {
-        color: var(--text-light);
-        text-decoration: none;
-      }
-
-      .writing-item h2 a:hover {
-        color: var(--accent);
-      }
-
-      .writing-item .date {
-        font-size: 1.15rem;
-        line-height: 1.7;
-        color: var(--accent-dark);
-        margin-top: 0.4rem;
-        font-weight: 400;
-      }
-
-      .writing-item .description {
-        font-size: var(--text-size-default);
-        line-height: 1.35;
-        margin-top: 0.8rem;
-        color: var(--text-light);
-      }
-
-      .article-header .description {
+      .index-header .description {
         text-align: left;
+        text-wrap: normal;
+        color: var(--text-light);
+      }
+
+      
+      .section-title {
+        font-size: 1.2rem;
+        color: var(--text);
+        margin: 2rem 0 1rem;
+        font-weight: 500;
       }
 
       .note-footer-divider {
@@ -85,7 +85,7 @@ function formatDate(date: Date): string {
       <div class="prose-container">
         <article class="prose">
           <AppHeader />
-          <div class="article-header">
+          <div class="index-header">
             <h1 class="title">Marcelo Mantilla</h1>
             <p class="description">
               Hey! I'm Marcelo, a product engineer and creative writer based out of Toronto.
@@ -93,19 +93,19 @@ function formatDate(date: Date): string {
             </p>
           </div>
 
-          <div class="writing-list">
-            {notes.map((note) => (
-              <div class="writing-item">
-                <h2>
-                  <a href={`/${note.id}`}>{note.data.title}</a>
-                </h2>
-                <p class="date">{formatDate(note.data.published)}</p>
-                {note.data.description && (
-                  <p class="description">{note.data.description}</p>
-                )}
-              </div>
-            ))}
-          </div>
+          <!-- <h2 class="section-title">Latest</h2>
+          <div class="latest-note">
+            <p class="date">{formatDate(latestNote.data.published)}</p>
+            <h2>
+              <a href={`/${latestNote.id}`}>{latestNote.data.title}</a>
+            </h2>
+            {latestNote.data.description && (
+              <p class="description">{latestNote.data.description}</p>
+            )}
+          </div> -->
+
+          <h2 class="section-title">Notes</h2>
+          <NoteList notes={otherNotes} />
 
           <div class="note-footer-divider" />
           <AppFooter />

@@ -1,0 +1,79 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  notes: CollectionEntry<'notes'>[];
+}
+
+const { notes } = Astro.props;
+
+// Format date to match the note page style
+function formatDate(date: Date): string {
+  const d = new Date(date);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}·${month}·${day}`;
+}
+---
+<style>
+  .notes-list {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .note-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .note-item .left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    line-height: 1;
+  }
+
+  .note-item .date {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    width: 6rem;
+    opacity: var(--opacity-light);
+  }
+
+  .note-item .title {
+    font-size: 1.15rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .note-item .title:hover {
+    color: var(--accent);
+  }
+
+  .note-item .reading-time {
+    font-size: 0.95rem;
+    font-family: 'Geist Mono', monospace;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--text-light);
+    opacity: var(--opacity-light);
+  }
+</style>
+
+<div class="notes-list">
+  {notes.map((note) => (
+    <div class="note-item">
+      <div class="left">
+        <span class="date">{formatDate(note.data.published)}</span>
+        <a href={`/${note.id}`} class="title">{note.data.title}</a>
+      </div>
+      <span class="reading-time">{note.data.readingTime}</span>
+    </div>
+  ))}
+</div>
+
