@@ -24,7 +24,8 @@ const { directory, note_id } = Astro.props as Props;
 		text-decoration: none;
 	}
 
-	nav a:last-child {
+	/* Only apply opacity when there's a directory or note_id */
+	nav p:has(a + strong) a:last-of-type {
 		opacity: 0.65;
 	}
 
