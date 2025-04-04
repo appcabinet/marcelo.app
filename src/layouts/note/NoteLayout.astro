@@ -6,8 +6,8 @@ import '@fontsource/source-sans-pro/700.css';
 import '@fontsource/source-sans-pro/900.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-
+import NoteHeader from '../../components/note/Header.astro';
+import NoteFooter from '../../components/note/Footer.astro';
 type Props = CollectionEntry<'notes'>['data'];
 
 const { title, description, published, updated, tags } = Astro.props;
@@ -25,6 +25,11 @@ const publishedString = new Date(published).toLocaleDateString('en-US', {
 			body {
 				font-family: 'Source Sans Pro', sans-serif;
 			}
+			.note-footer-divider {
+				height: 1px;
+				background-color: var(--background-core-dark);
+				margin: 3rem 0;
+			}
 		</style>
 	</head>
 
@@ -32,12 +37,14 @@ const publishedString = new Date(published).toLocaleDateString('en-US', {
 		<main>
 			<div class="prose-container">
 				<article class="prose">
-					<Header />
+					<NoteHeader />
 					<div class="article-header">
 						<h1 class="title">{title}</h1>
 						<p class="date">{publishedString} • 3 min read</p>
 					</div>
 					<slot />
+					<div class="note-footer-divider" />
+					<NoteFooter />
 				</article>
 			</div>
 		</main>

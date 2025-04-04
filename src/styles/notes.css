@@ -73,12 +73,14 @@ main {
   margin-top: 3rem;
   color: var(--text-light);
   font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .prose h2 {
   margin-top: 2.3rem;
   color: var(--text-light);
   font-weight: 600;
+  letter-spacing: -0.005em;
 }
 
 .prose h3 {
