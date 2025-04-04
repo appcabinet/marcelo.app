@@ -89,7 +89,7 @@ function formatDate(date: Date): string {
             {notes.map((note) => (
               <div class="writing-item">
                 <h2>
-                  <a href={`/notes/${note.id}`}>{note.data.title}</a>
+                  <a href={`/${note.id}`}>{note.data.title}</a>
                 </h2>
                 <p class="date">{formatDate(note.data.published)}</p>
                 {note.data.description && (
