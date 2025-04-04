@@ -31,12 +31,6 @@ main {
   hyphens: auto;
 }
 
-@media (max-width: 720px) {
-  .prose p {
-    font-size: var(--text-size-mobile);
-  }
-}
-
 .prose p strong {
   font-weight: 600;
 }
@@ -71,6 +65,10 @@ main {
 }
 
 @media (max-width: 720px) {
+  .prose p {
+    text-align: left;
+    font-size: var(--text-size-mobile);
+  }
   .prose h1 {
     font-size: 1.7rem;
   }
