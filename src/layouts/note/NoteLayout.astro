@@ -6,8 +6,8 @@ import '@fontsource/source-sans-pro/700.css';
 import '@fontsource/source-sans-pro/900.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
-import NoteHeader from '../../components/note/Header.astro';
-import NoteFooter from '../../components/note/Footer.astro';
+import NoteHeader from '../../components/note/NoteHeader.astro';
+import NoteFooter from '../../components/note/NoteFooter.astro';
 type Props = CollectionEntry<'notes'>['data'];
 
 const { title, description, published, updated, tags } = Astro.props;
