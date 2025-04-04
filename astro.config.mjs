@@ -8,6 +8,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
+  output: 'server',  // Enable SSR mode
   integrations: [mdx(), sitemap()],
   adapter: vercel(),
 });
