@@ -1,0 +1,64 @@
+---
+interface Props {
+	directory?: string;
+	note_id?: string;
+}
+const { directory, note_id } = Astro.props as Props;
+
+---
+<style>
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 4rem;
+	}
+
+	nav a, nav p {
+		font-size: var(--text-size-default);
+		margin: 0;
+	}
+
+	nav a {
+		color: var(--text-light);
+		text-decoration: none;
+	}
+
+	nav a:last-child {
+		opacity: 0.65;
+	}
+
+	nav a:hover {
+		opacity: 1;
+		color: var(--accent);
+	}
+
+	@media (max-width: 720px) {
+		nav {
+			height: 2rem;
+		}
+
+		nav a, 
+		nav p {
+			font-size: var(--text-size-mobile) !important;
+		}
+	}
+</style>
+
+<nav>
+	<p>
+		<a href="/" class="">marcelo.app</a>
+		{directory && (
+			<>
+				<strong>/</strong>
+				<a href={`/${directory}`}>{directory}</a>
+			</>
+		)}
+		{note_id && (
+			<>
+				<strong>/</strong>
+				<a href={`/${note_id}`}>{note_id}</a>
+			</>
+		)}
+	</p>
+</nav>

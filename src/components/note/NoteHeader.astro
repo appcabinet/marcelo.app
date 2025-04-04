@@ -1,43 +1,61 @@
 ---
+interface Props {
+    title: string;
+    publishedString: string;
+		readingTime?: string;
+}
 
+const { title, publishedString } = Astro.props;
 ---
+
 <style>
-	nav {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: 4rem;
-	}
+    .note-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-weight: 400;
+        margin-top: 8rem;
+        margin-bottom: 3rem;
+    }
 
-	@media (max-width: 720px) {
-		nav {
-			height: 3rem;
+    @media (max-width: 720px) {
+        .note-header {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+    }
+
+    .note-header .title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        color: var(--text-light);
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: -0.02em;
+    }
+
+    .note-header .date {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: var(--accent-dark);
+        margin-top: 0.4rem;
+        font-weight: 400;
+    }
+
+		@media (max-width: 720px) {
+			.note-header .title {
+				font-size: 1.8rem;
+			}
+
+			.note-header .date {
+				font-size: 1.1rem;
+				line-height: 1.5;
+			}
 		}
-	}
-	
-	nav p {
-		margin: 0;
-	}
-
-	nav a {
-		color: var(--text-light);
-		font-size: var(--text-size-default);
-		text-decoration: none;
-	}
-	nav a:nth-child(3) {
-		opacity: 0.65;
-	}
-	nav a:hover {
-		opacity: 1;
-		color: var(--accent);
-	}
-
 </style>
 
-<nav>
-	<p>
-		<a href="/" class="nav-marcelo">marcelo.app</a>
-		<strong>&nbsp;/&nbsp;</strong>
-		<a href="/writing">writing</a>
-	</p>
-</nav>
+<div class="note-header">
+    <h1 class="title">{title}</h1>
+    <p class="date">{publishedString} • 3 min read</p>
+</div>

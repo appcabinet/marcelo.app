@@ -2,11 +2,15 @@
 import '../../styles/notes.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
-import NoteHeader from '../../components/note/NoteHeader.astro';
+import AppHeader from '../../components/AppHeader.astro';
 import NoteFooter from '../../components/note/NoteFooter.astro';
-type Props = CollectionEntry<'notes'>['data'];
+import NoteHeader from '../../components/note/NoteHeader.astro';
 
-const { title, description, published, updated, tags } = Astro.props;
+type Props = CollectionEntry<'notes'>['data'] & {
+  note_id?: string;
+};
+
+const { title, description, published, note_id, readingTime } = Astro.props;
 const publishedString = new Date(published).toLocaleDateString('en-US', {
 	year: 'numeric',
 	month: 'long',
@@ -30,13 +34,13 @@ const publishedString = new Date(published).toLocaleDateString('en-US', {
 		<main>
 			<div class="prose-container">
 				<article class="prose">
-					<NoteHeader />
-					<div class="article-header">
-						<h1 class="title">{title}</h1>
-						<p class="date">{publishedString} • 3 min read</p>
-					</div>
+					<AppHeader note_id={note_id} />
+					<NoteHeader 
+						title={title}
+						publishedString={publishedString}
+						readingTime={readingTime}
+					/>
 					<slot />
-					<div class="note-footer-divider" />
 					<NoteFooter />
 				</article>
 			</div>

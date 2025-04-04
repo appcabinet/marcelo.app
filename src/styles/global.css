@@ -23,6 +23,7 @@
 
 	/* Text sizes*/
 	--text-size-default: 1.2rem;
+	--text-size-mobile: 1.12rem;
 }
 
 html {
