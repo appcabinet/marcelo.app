@@ -4,7 +4,64 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+/* Font optimization settings */
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-display: optional; /* Use optional for better navigation performance */
+	font-weight: 400;
+	font-style: normal;
+	size-adjust: 100%;
+	ascent-override: 90%;
+	descent-override: 20%;
+	line-gap-override: 0%;
+	src: local('Source Sans Pro'),
+		 url('/fonts/source-sans-pro-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-display: optional;
+	font-weight: 600;
+	font-style: normal;
+	size-adjust: 100%;
+	ascent-override: 90%;
+	descent-override: 20%;
+	line-gap-override: 0%;
+	src: local('Source Sans Pro'),
+		 url('/fonts/source-sans-pro-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-display: optional;
+	font-weight: 700;
+	font-style: normal;
+	size-adjust: 100%;
+	ascent-override: 90%;
+	descent-override: 20%;
+	line-gap-override: 0%;
+	src: local('Source Sans Pro'),
+		 url('/fonts/source-sans-pro-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-display: optional;
+	font-weight: 900;
+	font-style: normal;
+	size-adjust: 100%;
+	ascent-override: 90%;
+	descent-override: 20%;
+	line-gap-override: 0%;
+	src: local('Source Sans Pro'),
+		 url('/fonts/source-sans-pro-latin-900-normal.woff2') format('woff2');
+}
+
+/* Font fallback system */
 :root {
+	--font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--font-body: 'Source Sans Pro', var(--font-fallback);
+	--font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -38,6 +95,7 @@ html {
 
 body {
 	font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	font-display: swap;
 	margin: 0;
 	padding: 0;
 	text-align: left;
