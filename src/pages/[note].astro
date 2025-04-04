@@ -3,6 +3,9 @@ import { render } from 'astro:content';
 import { type CollectionEntry, getCollection } from 'astro:content';
 import NoteLayout from '../layouts/note/NoteLayout.astro';
 
+// Mark this page as static
+export const prerender = true;
+
 export async function getStaticPaths() {
 	const notes = await getCollection('notes');
 	return notes.map((note) => ({
