@@ -1,1 +1,33 @@
-(wip)
+---
+import { SITE_TITLE } from '../consts';
+import BaseHead from '../components/BaseHead.astro';
+import AppHeader from '../components/AppHeader.astro';
+import AppFooter from '../components/AppFooter.astro';
+import '../styles/app.css';
+---
+
+<html lang="en">
+  <head>
+    <BaseHead 
+      title={`About · ${SITE_TITLE}`}
+      description="About page (work in progress)"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="app-container">
+        <AppHeader directory="about" />
+        <div class="app-header">
+          <h1 class="title">About Me</h1>
+          <p class="description">
+            (wip)
+          </p>
+        </div>
+
+        <div class="app-divider" />
+
+        <AppFooter />
+      </section>
+    </main>
+  </body>
+</html>
