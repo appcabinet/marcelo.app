@@ -28,6 +28,8 @@ function formatDate(date: Date): string {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    min-width: 0;
   }
 
   .note-item .left {
@@ -37,6 +39,8 @@ function formatDate(date: Date): string {
     row-gap: 0.4rem;
     line-height: 1.2;
     flex: 1;
+    min-width: 0;
+    overflow: hidden;
   }
 
   @media (max-width: 720px) {
@@ -49,10 +53,14 @@ function formatDate(date: Date): string {
     .note-item .left {
       flex-direction: column-reverse;
       align-items: flex-start;
+      width: 100%;
     }
     .note-item .left .date {
       font-size: 0.9rem;
       display: none;
+    }
+    .note-item .title {
+      width: 100%;
     }
     .note-item .title::before {
       content: "•";
@@ -76,7 +84,11 @@ function formatDate(date: Date): string {
     text-decoration: none;
     position: relative;
     flex: 1;
+    min-width: 0;
     display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .note-item .title:hover {
@@ -91,6 +103,7 @@ function formatDate(date: Date): string {
     color: var(--text-light);
     opacity: var(--opacity-light);
     white-space: nowrap;
+    margin-left: 0.5rem;
   }
 </style>
 
