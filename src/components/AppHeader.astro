@@ -4,6 +4,7 @@ interface Props {
 	note_id?: string;
 }
 const { directory, note_id } = Astro.props as Props;
+const isProd = import.meta.env.PROD;
 
 ---
 <style>
@@ -49,7 +50,9 @@ const { directory, note_id } = Astro.props as Props;
 
 <nav>
 	<p>
-		<a href="/" class="">marcelo.app</a>
+		<a href="/" class="">
+			{isProd ? "marcelo.app" : "localhost"}
+		</a>
 		{directory && (
 			<>
 				<strong>/</strong>

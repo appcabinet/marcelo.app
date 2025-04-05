@@ -42,7 +42,13 @@ main {
 
 .prose a:hover {
   text-decoration: underline;
+  text-decoration-color: var(--accent);
   text-underline-offset: 2px;
+}
+
+.prose ul {
+  font-size: var(--text-size-default);
+  list-style-type: disc;
 }
 
 .prose h1 {
@@ -68,6 +74,10 @@ main {
 @media (max-width: 720px) {
   .prose p {
     text-align: left;
+    font-size: var(--text-size-mobile);
+  }
+  .prose ul {
+    padding-left: 1.5rem;
     font-size: var(--text-size-mobile);
   }
   .prose h1 {
