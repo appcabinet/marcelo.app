@@ -78,6 +78,11 @@ main {
   font-weight: 600;
 }
 
+.prose code {
+  font-size: 0.85em;
+  color: black;
+}
+
 .prose img {
   max-width: 100%;
   height: auto;
