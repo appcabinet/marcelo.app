@@ -43,7 +43,7 @@ function formatDate(date: Date): string {
     overflow: hidden;
   }
 
-  @media (max-width: var(--breakpoint-mobile)) {
+  @media (max-width: 720px) {
     .notes-list {
       gap: 0.40rem;
     }
@@ -59,7 +59,8 @@ function formatDate(date: Date): string {
       font-size: 0.9rem;
       display: none;
     }
-    .note-item .title {
+    .note-item .left .title {
+      font-size: 1.1rem;
       width: 100%;
     }
     .note-item .title::before {

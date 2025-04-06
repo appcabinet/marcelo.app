@@ -21,7 +21,7 @@
 }
 
 .app-header .description {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 1.3;
   text-align: left;
   text-wrap: normal;
@@ -29,7 +29,7 @@
   margin: 0;
 }
 
-@media (max-width: var(--breakpointmobile)) {
+@media (max-width: 720px) {
   .app-header .title {
     font-size: 1.5rem;
   }

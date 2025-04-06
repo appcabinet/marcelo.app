@@ -228,7 +228,7 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 720px) {
 	main {
 		padding: 2em;
 	}
