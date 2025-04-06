@@ -100,7 +100,7 @@
 	--opacity-dark: 0.35;
 
 	/* Note Variables */
-	--article-container-width: 980px;
+	--article-container-width: 900px;
 	--article-max-width: 640px;
 	--article-aside-width: calc(var(--article-container-width) - var(--article-max-width));
 
