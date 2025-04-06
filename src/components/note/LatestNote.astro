@@ -57,7 +57,7 @@ const publishedString = new Date(note.data.published).toLocaleDateString('en-US'
     margin: 0;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: var(--breakpointmobile)) {
     .latest-note .title {
       font-size: 1.3rem;
     }

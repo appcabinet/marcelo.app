@@ -64,7 +64,6 @@
   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
-/* Font fallback system */
 :root {
 	--font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 	--font-body: 'Source Sans Pro', var(--font-fallback);
@@ -76,6 +75,10 @@
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+
+	/* Breakpoints */
+	--breakpoint-mobile: 720px;
+	--breakpoint-desktop: 940px;
 
 	/* Core Blog Colors*/
 	--background-core: #F5F5F5;
@@ -92,6 +95,14 @@
 	/* Opacity */
 	--opacity-light: 0.65;
 	--opacity-dark: 0.35;
+
+	/* Note Variables */
+	--article-container-width: 900px;
+	--article-max-width: 640px;
+	--article-aside-width: calc(var(--article-container-width) - var(--article-max-width));
+
+	--article-width-mobile: 100%;
+	--article-max-width-mobile: 600px;
 }
 
 html {
@@ -214,7 +225,7 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
-@media (max-width: 720px) {
+@media (max-width: var(--breakpoint-mobile)) {
 	main {
 		padding: 2em;
 	}

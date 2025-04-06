@@ -3,15 +3,16 @@ main {
 }
 
 .prose {
-  max-width: 600px;
+  max-width: var(--article-max-width-mobile);
   color: rgb(var(--text));
   width: 100%;
   margin: 0 auto;
 }
 
+/* Desktop (940px and up) */
 @media (min-width: 940px) {
   .prose-container {
-    width: 900px;
+    width: var(--article-container-width);
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -19,7 +20,7 @@ main {
   }
 
   .prose {
-    max-width: 640px;
+    max-width: var(--article-max-width);
     margin: 0;
   }
 }

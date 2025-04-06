@@ -36,7 +36,7 @@ const isProd = import.meta.env.PROD;
 		color: var(--accent);
 	}
 
-	@media (max-width: 720px) {
+	@media (max-width: var(--breakpointmobile)) {
 		nav {
 			height: 2rem;
 		}

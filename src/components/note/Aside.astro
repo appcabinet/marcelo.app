@@ -6,8 +6,8 @@
 
   .aside-line {
     height: 2px;
-    background-color: rgb(var(--accent));
-    margin-bottom: 0.75rem;
+    background-color: var(--accent);
+    margin-bottom: 0.5rem;
   }
 
   .aside-content {
@@ -17,6 +17,9 @@
 
   /* Ensure nested markdown elements have proper spacing */
   .aside-content :global(p) {
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
     margin: 0.5rem 0;
   }
 

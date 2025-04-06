@@ -29,7 +29,7 @@
   margin: 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: var(--breakpointmobile)) {
   .app-header .title {
     font-size: 1.5rem;
   }
