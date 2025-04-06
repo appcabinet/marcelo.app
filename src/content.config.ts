@@ -24,6 +24,7 @@ const notes = defineCollection({
 		tags: z.array(z.string()).optional(),
 		readingTime: z.string().optional(),
 		noteType: z.enum(['note', 'article', 'essay']).optional().default('note'),
+		aside: z.boolean().optional().default(false),
 	}),
 });
 
