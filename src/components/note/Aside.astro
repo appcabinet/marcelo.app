@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { translateY } = Astro.props;
-const translateYValue = translateY ? `translateY(${translateY}px)` : 'translateY(-50%)';
+const translateYValue = translateY ? `translateY(${translateY}px)` : 'translateY(0)';
 
 ---
 <style define:vars={{ translateYValue }}>
@@ -17,7 +17,7 @@ const translateYValue = translateY ? `translateY(${translateY}px)` : 'translateY
 
   .aside-container {
     position: absolute;
-    right: calc(-1.06 * var(--article-container-width));
+    right: calc(-1.05 * var(--article-container-width));
     width: 260px;
     transform: var(--translateYValue); /* Use CSS variable syntax */
   }
