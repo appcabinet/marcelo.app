@@ -10,7 +10,7 @@ main {
 }
 
 /* Desktop (940px and up) */
-@media (min-width: 940px) {
+@media (min-width: 960px) {
   .prose-container {
     width: var(--article-container-width);
     margin: 0 auto;
@@ -49,7 +49,12 @@ main {
 
 .prose ul {
   font-size: var(--text-size-default);
-  list-style-type: disc;
+  list-style-type: square;
+  line-height: 1.4;
+}
+
+.prose ul li::marker {
+  color: var(--text-fade);
 }
 
 .prose h1 {

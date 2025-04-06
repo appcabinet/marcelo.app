@@ -1,21 +1,32 @@
+---
+interface Props {
+  translateY: number;
+}
+
+const { translateY } = Astro.props;
+const translateYValue = translateY ? `translateY(${translateY}px)` : 'translateY(-50%)';
+
+---
 <style>
   .aside-reference-container {
-    position: relative;
-    width: 100%;
-    min-height: 1px; /* Minimal height to maintain flow */
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: visible; /* Allows the aside to be visible despite parent dimensions */
   }
 
   .aside-container {
     position: absolute;
-    right: -260px; /* Push the aside out to the right margin */
-    width: 220px;
-    margin-top: 0;
+    right: calc(-1.03 * var(--article-container-width));
+    width: 240px;
+    transform: var({translateYValue}); /* Adjust vertical position to align with the reference point */
   }
 
   .aside-line {
     height: 1.5px;
     background-color: var(--accent);
     margin-bottom: 0.5rem;
+    opacity: 0.65;
   }
 
   .aside-content {
@@ -29,6 +40,8 @@
     letter-spacing: -0.01em;
     line-height: 1.2;
     margin: 0.5rem 0;
+    text-align: left;
+    color: var(--text-light);
   }
 
   .aside-content :global(p:first-child) {
@@ -38,6 +51,7 @@
   .aside-content :global(p:last-child) {
     margin-bottom: 0;
   }
+
 </style>
 
 <div class="aside-reference-container">
