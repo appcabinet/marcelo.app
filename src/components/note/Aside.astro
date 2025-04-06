@@ -7,7 +7,7 @@ const { translateY } = Astro.props;
 const translateYValue = translateY ? `translateY(${translateY}px)` : 'translateY(-50%)';
 
 ---
-<style>
+<style define:vars={{ translateYValue }}>
   .aside-reference-container {
     position: absolute;
     height: 0;
@@ -17,9 +17,9 @@ const translateYValue = translateY ? `translateY(${translateY}px)` : 'translateY
 
   .aside-container {
     position: absolute;
-    right: calc(-1.07 * var(--article-container-width));
+    right: calc(-1.06 * var(--article-container-width));
     width: 260px;
-    transform: var({translateYValue}); /* Adjust vertical position to align with the reference point */
+    transform: var(--translateYValue); /* Use CSS variable syntax */
   }
 
   @media (max-width: 1001px) {
@@ -42,7 +42,7 @@ const translateYValue = translateY ? `translateY(${translateY}px)` : 'translateY
 
   /* Ensure nested markdown elements have proper spacing */
   .aside-content :global(p) {
-    font-size: 1rem;
+    font-size: 0.95rem;
     letter-spacing: -0.01em;
     line-height: 1.2;
     margin: 0.5rem 0;
