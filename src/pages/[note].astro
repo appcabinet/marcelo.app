@@ -17,7 +17,6 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'notes'>;
 const note = Astro.props;
 const { Content } = await render(note);
-console.log(note);
 ---
 
 <NoteLayout note_id={note.id} {...note.data}>
