@@ -1,0 +1,39 @@
+---
+import type { LocalImageProps, RemoteImageProps } from 'astro:assets';
+import { Image } from 'astro:assets';
+
+type Props = LocalImageProps | RemoteImageProps;
+
+const props = { ...Astro.props } as Props;
+---
+<style>
+  figure {
+    margin: 2rem 0;
+    width: 100%;
+  }
+
+  figcaption {
+    padding-top: 0.35rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+  }
+
+  .note-image-caption :global(p) {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: var(--text-fade);
+    margin-top: 0rem;
+    text-align: center;
+  }
+</style>
+
+<figure>
+  <Image {...props} />
+  <figcaption class="note-image-caption">
+    <slot />
+  </figcaption>
+</figure>

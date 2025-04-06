@@ -9,6 +9,7 @@ aside: true
 ---
 
 import Aside from '../../components/note/Aside.astro'
+import NoteImage from '../../components/note/NoteImage.astro'
 import { Image } from 'astro:assets'
 import marieLuders from '../../assets/readme/marie-elisabeth-luders-haus.jpg'
 
@@ -50,12 +51,13 @@ Some of you may know that I completed my undergraduate studies in Germany. Durin
 It was only after [@benparry](https:/x.com/_benjaminparry) wrote an article on Bauhaus did I realize the inspired architecture of the city I had spent so much time in. I highly recommend giving the series a read! [Link](https://www.skillfulnotes.com/p/bringing-design-to-life)
 </Aside>
 
-<Image 
+<NoteImage 
   src={marieLuders} 
   alt="Marie-Elisabeth-Lüders-Haus"
   quality="max"
-/>
-https://www.architecturalsteelprofiles.com/our-projects/extension-marie-elisabeth-luders-haus/
+>
+  Image: [Montanstahl Architectural Steel Profiles](https://www.architecturalsteelprofiles.com/our-projects/extension-marie-elisabeth-luders-haus/)
+</NoteImage>
 
 Inspired by my time in Germany, the design of this site is largely utilitarian and brutalist at it's core, following clear grid patterns and mathematical spacing guidelines. The idea was that a highly structured and regimented layout gives me more room to play with chaotic elements and visual artifacts in my writing. With a more structured layout, adding 3D models or chaotic visual elements helps create visual interest.
 
