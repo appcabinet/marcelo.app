@@ -10,7 +10,7 @@ main {
 }
 
 /* Desktop (940px and up) */
-@media (min-width: 980px) {
+@media (min-width: 1000px) {
   .prose-container {
     width: var(--article-container-width);
     margin: 0 auto;
@@ -78,7 +78,7 @@ main {
   font-weight: 600;
 }
 
-@media (max-width: 981px) {
+@media (max-width: 1001px) {
   .prose p {
     text-align: left;
     font-size: var(--text-size-mobile);

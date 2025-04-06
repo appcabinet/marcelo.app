@@ -18,11 +18,11 @@ const translateYValue = translateY ? `translateY(${translateY}px)` : 'translateY
   .aside-container {
     position: absolute;
     right: calc(-1.07 * var(--article-container-width));
-    width: 270px;
+    width: 260px;
     transform: var({translateYValue}); /* Adjust vertical position to align with the reference point */
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: 1001px) {
     .aside-container {
       display: none;
     }
