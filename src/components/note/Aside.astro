@@ -1,11 +1,19 @@
 <style>
+  .aside-reference-container {
+    position: relative;
+    width: 100%;
+    min-height: 1px; /* Minimal height to maintain flow */
+  }
+
   .aside-container {
-    max-width: 220px;
-    margin: 1.5rem 0;
+    position: absolute;
+    right: -260px; /* Push the aside out to the right margin */
+    width: 220px;
+    margin-top: 0;
   }
 
   .aside-line {
-    height: 2px;
+    height: 1.5px;
     background-color: var(--accent);
     margin-bottom: 0.5rem;
   }
@@ -32,9 +40,11 @@
   }
 </style>
 
-<div class="aside-container">
-  <div class="aside-line"></div>
-  <div class="aside-content">
-    <slot />
+<div class="aside-reference-container">
+  <div class="aside-container">
+    <div class="aside-line"></div>
+    <div class="aside-content">
+      <slot />
+    </div>
   </div>
 </div>
