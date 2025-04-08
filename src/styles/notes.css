@@ -4,12 +4,12 @@ main {
 
 .prose {
   max-width: var(--article-max-width-mobile);
-  color: rgb(var(--text));
+  color: rgb(var(--text-light));
   width: 100%;
   margin: 0 auto;
 }
 
-/* Desktop (940px and up) */
+/* Desktop (1000px and up) */
 @media (min-width: 1000px) {
   .prose-container {
     width: var(--article-container-width);
@@ -27,7 +27,8 @@ main {
 
 .prose p {
   font-size: var(--text-size-default);
-  line-height: 1.35;
+  line-height: var(--line-height-default);
+  color: var(--text-light);
   text-align: justify;
   hyphens: auto;
   margin: 1.5rem 0;
@@ -93,6 +94,7 @@ main {
   .prose p {
     text-align: left;
     font-size: var(--text-size-mobile);
+    line-height: var(--line-height-mobile);
   }
   .prose ul {
     padding-left: 1.5rem;

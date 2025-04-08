@@ -6,15 +6,9 @@ readingTime: "3 min"
 ---
 I've been reading Tangible Thinking by Sanj Sirpal (a fellow Oakvillian!) and it has made me question my approach to my creative process. Central to his thesis for creativity is that creativity and productivity are opposed. Whereas one enables an opening of possibilities, the other constrains the set of possible outcomes. Part of what he discusses is that digital mediums create friction, whereas analog have far less. As much as I love Notion, writing notes in Notion is far more constrained than writing notes on cue cards. There's a time and place for both - but often we don't reach for the cue cards in the spirit of being "organized", or building a second brain (whatever that means).
 
-# Why I Haven't Changed
-
 I've never been much of an analog tool user. The piano I grew up playing (Roland XXX) was digital, and had built in synthesizers, metronomes, and a fully fledged DAW (Digital Audio Workstation) inside. It was too confusing so I never quite learned how to use it, but this must have shifted my mental model for how tools worked. Why would I use an analog metronome if the digital one worked great and was far more practical? Instead of joining bands and making music with others, I regressed into my own world of making music digitally by myself, where all the sounds and synthesizers in the world would be available to me.
 
-## Moving Things Along
-
 Since then I unfortunately haven't changed much. I still don't write anything down on paper, and even though I have purchased a nice pen with the idea of writing more, I haven't been able to come around completely. Although I love Sanjiv's ideas regarding opening and expressing ideas through atomic cue cards, I find myself locked into this digital world where everything moves faster. It's where I'm comfortable.
-
-### Digital Liberation in Obsidian
 
 I have however fallen in love with Obsidian. @aarnphm mentioned Kepano at one of @hussamfyi walk and talks last year, and we discussed the fundamental premise of file-over-app. It had never occurred to me that owning your data far after a business died was important to some people. Most of my life I had relied on cloud services and abstractions. When I finally got started with the tool, I faced growing pains. If I wanted a table I had to write markdown, or use this strange plugins that runs inline JavaScript. if I wanted to add properties to a page I needed to add this weird thing called fronmatter. All of it was unnecessarily complicated and I felt *constrained* me as opposed to liberating me. 
 

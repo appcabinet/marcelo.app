@@ -15,6 +15,11 @@ function formatDate(date: Date): string {
   const day = String(d.getDate()).padStart(2, '0');
   return `${year}·${month}·${day}`;
 }
+
+function formatReadingTime(readingTime: string | undefined): string {
+  if (!readingTime) return '';
+  return readingTime.replaceAll(' ', '').replace('min', 'm');
+}
 ---
 <style>
   .notes-list {
@@ -69,21 +74,23 @@ function formatDate(date: Date): string {
       margin-right: 0.8rem;
       color: var(--text-light);
     }
+    .note-item .reading-time {
+      font-size: 0.9rem;
+    }
   }
 
   .note-item .date {
     font-family: 'Geist Mono', monospace;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-light);
-    width: 6rem;
+    width: 6.2rem;
     opacity: var(--opacity-light);
   }
 
   .note-item .title {
-    font-size: 1.15rem;
+    font-size: var(--text-size-default);
     font-weight: 400;
-    color: var(--text);
-    color: black;
+    color: var(--text-dark);
     text-decoration: none;
     position: relative;
     flex: 1;
@@ -99,7 +106,7 @@ function formatDate(date: Date): string {
   }
 
   .note-item .reading-time {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-family: 'Geist Mono', monospace;
     line-height: 1;
     letter-spacing: -0.02em;
@@ -107,6 +114,19 @@ function formatDate(date: Date): string {
     opacity: var(--opacity-light);
     white-space: nowrap;
     margin-left: 0.5rem;
+  }
+
+  .reading-time.mobile {
+    display: none;
+  }
+
+  @media (max-width: 720px) {
+    .reading-time.desktop {
+      display: none;
+    }
+    .reading-time.mobile {
+      display: inline;
+    }
   }
 </style>
 
@@ -117,7 +137,8 @@ function formatDate(date: Date): string {
         <span class="date">{formatDate(note.data.published)}</span>
         <a href={`/${note.id}`} class="title">{note.data.title}</a>
       </div>
-      <span class="reading-time">{note.data.readingTime}</span>
+      <span class="reading-time desktop">{note.data.readingTime}</span>
+      <span class="reading-time mobile">{formatReadingTime(note.data.readingTime)}</span>
     </div>
   ))}
 </div>
