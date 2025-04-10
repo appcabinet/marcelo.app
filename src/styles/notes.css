@@ -31,7 +31,7 @@ main {
   color: var(--text-light);
   text-align: left;
   hyphens: auto;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .prose p strong {

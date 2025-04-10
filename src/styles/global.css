@@ -94,10 +94,10 @@
 	/* Text sizes*/
 	--header-size-default: 1.5rem;
 	--header-size-mobile: 1.5rem;
-	--text-size-default: 1.2rem;
+	--text-size-default: 1.15rem;
 	--text-size-mobile: 1.1rem;
 	--line-height-default: 1.5;
-	--line-height-mobile: 1.45;
+	--line-height-mobile: 1.5;
 
 	/* Opacity */
 	--opacity-light: 0.65;
