@@ -64,7 +64,7 @@ function formatReadingTime(readingTime: string | undefined): string {
       display: none;
     }
     .note-item .left .title {
-      font-size: 1.1rem;
+      font-size: var(--text-size-mobile);
       width: 100%;
     }
     .note-item .title::before {
@@ -105,7 +105,7 @@ function formatReadingTime(readingTime: string | undefined): string {
   }
 
   .note-item .reading-time {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-family: 'Geist Mono', monospace;
     line-height: 1;
     letter-spacing: -0.02em;
@@ -115,15 +115,15 @@ function formatReadingTime(readingTime: string | undefined): string {
     margin-left: 0.5rem;
   }
 
-  .reading-time .mobile {
+  .reading-time.mobile {
     display: none;
   }
 
   @media (max-width: 720px) {
-    .reading-time .desktop {
+    .reading-time.desktop {
       display: none;
     }
-    .reading-time .mobile {
+    .reading-time.mobile {
       display: inline;
       font-size: 0.9rem;
     }
