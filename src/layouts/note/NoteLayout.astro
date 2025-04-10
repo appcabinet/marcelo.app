@@ -17,7 +17,8 @@ const publishedString = new Date(published).toLocaleDateString('en-US', {
 	month: 'long',
 	day: 'numeric',
 });
-const refTitle = `Marcelo | ${title}`
+const titlePrefix = import.meta.env.DEV ? 'Localhost' : 'Marcelo';
+const refTitle = `${titlePrefix} | ${title}`
 
 // Get random note, excluding current note
 const allNotes = await getCollection('notes');
