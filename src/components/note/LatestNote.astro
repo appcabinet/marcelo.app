@@ -28,7 +28,7 @@ const publishedString = new Date(note.data.published).toLocaleDateString('en-US'
   }
 
   .latest-note .title {
-    font-size: 1.3rem;
+    font-size: var(--subheader-size-default);
     font-weight: 600;
     color: var(--text-light);
     text-decoration: none;
@@ -59,15 +59,15 @@ const publishedString = new Date(note.data.published).toLocaleDateString('en-US'
 
   @media (max-width: 1001px) {
     .latest-note .title {
-      font-size: 1.2rem;
+      font-size: var(--subheader-size-mobile);
     }
     
     .latest-note .description {
-      font-size: 1.1rem;
+      font-size: var(--text-size-mobile);
     }
 
     .latest-note .header {
-      font-size: 1.1rem;
+      font-size: var(--text-size-mobile);
       line-height: 1.5;
     }
   }

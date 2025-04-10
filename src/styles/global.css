@@ -94,6 +94,10 @@
 	/* Text sizes*/
 	--header-size-default: 1.5rem;
 	--header-size-mobile: 1.5rem;
+	--subheader-size-default: 1.3rem;
+	--subheader-size-mobile: 1.3rem;
+	--text-header-size-default: 1.2rem;
+	--text-header-size-mobile: 1.15rem;
 	--text-size-default: 1.15rem;
 	--text-size-mobile: 1.1rem;
 	--line-height-default: 1.5;
