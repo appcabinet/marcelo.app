@@ -38,6 +38,10 @@ main {
   font-weight: 600;
 }
 
+.prose p + ul {
+  margin-top: -2rem;
+}
+
 .prose a {
   text-decoration: none;
   color: var(--accent-dark);
@@ -53,10 +57,16 @@ main {
   font-size: var(--text-size-default);
   list-style-type: square;
   line-height: var(--line-height-default);
+  padding-left: 2rem;
+}
+
+.prose ul li {
+  text-indent: 0.2rem;
 }
 
 .prose ul li::marker {
   color: var(--text-fade);
+  margin-inline-end: 10em;
 }
 
 .prose h1 {

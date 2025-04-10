@@ -8,13 +8,12 @@ readingTime: "2 min"
 
 You can accurately judge the quality of ones philosophy by the outcomes it creates in that person's life. Negative belief systems will naturally draw that person towards chaos, whilst positive ones will tend to bring order and peace.
 
-Questions such as:
-
-- Are they kind?
-- How emotionally charged are they?
-- Are they physically healthy?
-- Do they have any outward resentments?
-- Do they care for others?
+Questions such as:<br/>
+- Are they kind?  
+- How emotionally charged are they?  
+- Are they physically healthy?  
+- Do they have any outward resentments?  
+- Do they care for others?  
 - etc.
 
 Fundamentally, these are the most important elements of one philosophy/political outlook in life. Regardless of what one may believe, we should still desire that the person is kind, regarding of others, and does not litter in the street.
