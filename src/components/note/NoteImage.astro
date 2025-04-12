@@ -10,16 +10,36 @@ const props = { ...Astro.props } as Props;
   figure {
     margin: 2rem 0;
     width: 100%;
+    position: relative;
   }
 
   figcaption {
     padding-top: 0.5rem;
   }
 
+  .image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 30px;
+    /* Outer subtle shadow border */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .image-container::before {
+    content: '';
+    position: absolute;
+    inset: 0.5px;
+    border-radius: 28px;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.65);
+    pointer-events: none;
+    z-index: 1;
+  }
+
   img {
     width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 29px;
+    display: block;
   }
 
   .note-image-caption :global(p) {
@@ -32,7 +52,9 @@ const props = { ...Astro.props } as Props;
 </style>
 
 <figure>
-  <Image {...props} />
+  <div class="image-container">
+    <Image {...props} />
+  </div>
   <figcaption class="note-image-caption">
     <slot />
   </figcaption>
