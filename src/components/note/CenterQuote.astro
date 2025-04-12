@@ -1,0 +1,31 @@
+<style>
+  .center-quote {
+    margin: 2rem 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .divider {
+    height: 1px;
+    background-color: var(--text-light);
+    opacity: 0.15;
+  }
+
+  .quote-content :global(p){
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--text-light);
+    opacity: var(--opacity-light);
+    text-align: center;
+  }
+</style>
+
+<div class="center-quote">
+  <div class="divider"></div>
+  <div class="quote-content">
+    <slot />
+  </div>
+  <div class="divider"></div>
+</div>
