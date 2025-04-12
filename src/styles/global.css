@@ -83,8 +83,8 @@
 	/* Core Blog Colors*/
 	--background-core: #F5F5F5;
 	--background-core-dark: #E0E0E0;
-	--text: #1C1C1C;
 	--text-light: #292929;
+	--text-lighter: #2e2e2e;
 	--text-fade: rgba(41, 41, 41, 0.85);
 	
 	--accent: #EE7C2F;
@@ -93,12 +93,19 @@
 	/* Text sizes*/
 	--header-size-default: 1.5rem;
 	--header-size-mobile: 1.5rem;
+
+	--display-size-default: 2rem;
+	--display-size-mobile: 1.8rem;
+
 	--subheader-size-default: 1.3rem;
 	--subheader-size-mobile: 1.3rem;
+
 	--text-header-size-default: 1.2rem;
 	--text-header-size-mobile: 1.15rem;
+
 	--text-size-default: 1.15rem;
 	--text-size-mobile: 1.1rem;
+
 	--line-height-default: 1.5;
 	--line-height-mobile: 1.5;
 
@@ -107,8 +114,8 @@
 	--opacity-dark: 0.5;
 
 	/* Note Variables */
-	--article-container-width: 900px;
-	--article-max-width: 640px;
+	--article-container-width: 1000px;
+	--article-max-width: 680px;
 	--article-aside-width: calc(var(--article-container-width) - var(--article-max-width));
 
 	--article-width-mobile: 100%;

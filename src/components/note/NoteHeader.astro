@@ -15,7 +15,7 @@ const { title, publishedString, readingTime } = Astro.props;
     justify-content: space-between;
     align-items: flex-start;
     font-weight: 400;
-    margin-top: 5rem;
+    margin-top: 8rem;
     margin-bottom: 6rem;
   }
 
@@ -27,9 +27,9 @@ const { title, publishedString, readingTime } = Astro.props;
   }
 
   .note-header .title {
-    font-size: var(--header-size-default);
-    line-height: 1.2;
-    color: var(--text-light);
+    font-size: var(--display-size-default);
+    line-height: 1.1;
+    color: var(--text-lighter);
     font-weight: 600;
     margin: 0;
     letter-spacing: -0.02em;
@@ -40,24 +40,27 @@ const { title, publishedString, readingTime } = Astro.props;
     line-height: var(--line-height-default);
     color: var(--text-light);
     opacity: var(--opacity-light);
+    padding-top: 0.3rem;
     margin-top: 0rem;
+    margin-bottom: 0rem;
     font-weight: 400;
   }
 
   @media (max-width: 1001px) {
     .note-header .title {
-      font-size: var(--header-size-mobile);
+      font-size: var(--display-size-mobile);
       line-height: 1;
     }
 
     .note-header .subtitle {
+      padding-top: 0.2rem;
       font-size: var(--text-size-mobile);
-      line-height: 1;
+      line-height: var(--line-height-mobile);
     }
   }
 </style>
 
 <div class="note-header">
     <h1 class="title">{title}</h1>
-    <!-- <p class="subtitle">{publishedString} {readingTime && ` · ${readingTime}`}</p> -->
+    <p class="subtitle">{publishedString} {readingTime && ` · ${readingTime}`}</p>
 </div>

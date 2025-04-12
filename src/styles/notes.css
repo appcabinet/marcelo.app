@@ -38,10 +38,6 @@ main {
   font-weight: 600;
 }
 
-.prose p + ul {
-  margin-top: -2rem;
-}
-
 .prose a {
   text-decoration: none;
   color: var(--accent-dark);
@@ -75,6 +71,7 @@ main {
   font-size: var(--header-size-default);
   font-weight: 600;
   letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 
 .prose h2 {
