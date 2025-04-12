@@ -10,9 +10,26 @@ aside: true
 
 import Aside from '../../components/note/Aside.astro'
 import NoteImage from '../../components/note/NoteImage.astro'
+import Callout from '../../components/note/Callout.astro'
 import { Image } from 'astro:assets'
 import studio from '../../assets/digital-junk-drawers/studio.jpg'
 import ispy from '../../assets/digital-junk-drawers/ispy.jpg'
+
+<Callout type="JOURNAL">
+This is where I write about ideas and things I'm processing. I'll usually fill this in throughout the day as things come up. The idea for this article came up as a journal entry a few weeks ago. Once the idea is written down, you can take it at some point in the future and run with it.
+</Callout>
+
+ <Aside>
+ "Productizing" tasks lists doesn't work well because the tasks are *too atomic.* Task-based tools force you to think of tasks as individual units of work to be accomplished, not a fluid list of things to get done. For this reason I find text documents to be more helpful; they can more effortlessly respond to changes in your day-to-day.
+ </Aside>
+ 
+<Callout type="TASKS">
+Here I dump my daily tasks. I have everything keybinded, so navigating tasks, adding new ones, and moving things around is a breeze. Having a simple interface where you can modify everything ad-hoc is helpful and reduces friction when capturing random information. I will likely operate this way for the rest of my life.
+</Callout>
+
+<Callout type="QUICK NOTES">
+This part is straightforward. Anything I need gets tossed in here. Sometimes I'll have large SQL queries, code snippets, urls, images, whatever. This is the actual junk drawer of my workspace.
+</Callout>
 
 I was never big on analog tooling. The piano I grew up playing was a Roland Fantom S88 – a digital piano with synthesizers, samplers, and a digital audio workstation (DAW) baked right in. Even though I never quite learned how to use it, it deeply influenced how I thought about music from a young age. When I went on to become a music producer, I carried with me a subtle contempt for anything analog. Instead of recording my own sound effects, I would download samples online. Instead of pianos, I'd use synthesizers and add controlled imperfections (randomness) to make them *feel analog*. When I started composing film scores, I would engineer entire orchestras directly from within my computer. I was so entrenched in digital tooling that it ultimately became the way I expressed myself *artistically.*
 
@@ -72,19 +89,21 @@ In *The Organized Mind* by David Eagleman, Eagleman emphasizes the importance of
 
 My note taking tool of choice is Obsidian, and I love it's "daily note" feature. Every day I new note is created with a template of my choice. It allows me to start with a fresh slate, whilst also allowing me to traverse previous days easily. This is my approach however — find a system that works for you.
 
-
->[!Journal]
->This is where I write about ideas and things I'm processing. I'll usually fill this in throughout the day as things come up. The idea for this article came up as a journal entry a few weeks ago. Once the idea is written down, you can take it at some point in the future and run with it.
+<Callout type="JOURNAL">
+This is where I write about ideas and things I'm processing. I'll usually fill this in throughout the day as things come up. The idea for this article came up as a journal entry a few weeks ago. Once the idea is written down, you can take it at some point in the future and run with it.
+</Callout>
 
  <Aside>
  "Productizing" tasks lists doesn't work well because the tasks are *too atomic.* Task-based tools force you to think of tasks as individual units of work to be accomplished, not a fluid list of things to get done. For this reason I find text documents to be more helpful; they can more effortlessly respond to changes in your day-to-day.
  </Aside>
  
->[!Tasks]
- > Here I dump my daily tasks. I have everything keybinded, so navigating tasks, adding new ones, and moving things around is a breeze. Having a simple interface where you can modify everything ad-hoc is helpful and reduces friction when capturing random information. I will likely operate this way for the rest of my life.
+<Callout type="TASKS">
+Here I dump my daily tasks. I have everything keybinded, so navigating tasks, adding new ones, and moving things around is a breeze. Having a simple interface where you can modify everything ad-hoc is helpful and reduces friction when capturing random information. I will likely operate this way for the rest of my life.
+</Callout>
 
->[!Quick Notes]
->This part is straightforward. Anything I need gets tossed in here. Sometimes I'll have large SQL queries, code snippets, urls, images, whatever. This is the actual junk drawer of my workspace.
+<Callout type="QUICK NOTES">
+This part is straightforward. Anything I need gets tossed in here. Sometimes I'll have large SQL queries, code snippets, urls, images, whatever. This is the actual junk drawer of my workspace.
+</Callout>
 
 <Aside>
 My keybinds allow me to move forward and backwards days easily (`⌘+[` to go back a day, and `⌘+]` to go forward)

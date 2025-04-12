@@ -82,7 +82,9 @@
 
 	/* Core Blog Colors*/
 	--background-core: #F5F5F5;
+	--background-core-light: #e9e9e9;
 	--background-core-dark: #E0E0E0;
+
 	--text-light: #292929;
 	--text-lighter: #2e2e2e;
 	--text-fade: rgba(41, 41, 41, 0.85);
@@ -120,6 +122,12 @@
 
 	--article-width-mobile: 100%;
 	--article-max-width-mobile: 600px;
+
+	/* border radius */
+	--radius-lg: 29px;
+	--radius-md: 16px;
+	--radius-sm: 8px;
+
 }
 
 html {

@@ -1,0 +1,47 @@
+---
+interface Props {
+  type?: string;
+}
+
+const { type = 'NOTE' } = Astro.props;
+---
+<style>
+  .callout {
+    padding: 1.1rem 1.2rem 1.2rem 1.2rem;
+    margin: 1.5rem 0;
+    border-radius: var(--radius-md);
+    background-color: #e9e9e9;
+  }
+
+  .callout-header {
+    font-size: calc(var(--text-size-default) - 1.5px);
+    font-weight: 600;
+    color: var(--text-light);
+    opacity: var(--opacity-light);
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.025em;
+  }
+
+  .callout :global(p) {
+    margin: 0;
+  }
+
+  .callout :global(p + p) {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 1001px) {
+    .callout {
+      padding: 1rem;
+    }
+    .callout-header {
+      font-size: calc(var(--text-size-mobile) - 1.5px);
+    }
+  }
+
+</style>
+
+<div class="callout">
+  <div class="callout-header">{type}</div>
+  <slot />
+</div>
