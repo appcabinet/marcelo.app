@@ -20,7 +20,7 @@ const props = { ...Astro.props } as Props;
   .image-container {
     position: relative;
     width: 100%;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-sm);
     /* Outer subtle shadow border */
     border: 1px solid rgba(0, 0, 0, 0.3);
   }
@@ -29,7 +29,7 @@ const props = { ...Astro.props } as Props;
     content: '';
     position: absolute;
     inset: 0.5px;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.65);
     pointer-events: none;
     z-index: 1;
@@ -38,7 +38,7 @@ const props = { ...Astro.props } as Props;
   img {
     width: 100%;
     height: auto;
-    border-radius: calc(var(--radius-lg) - 1px);
+    border-radius: calc(var(--radius-sm) - 1px);
     display: block;
   }
 
@@ -53,11 +53,11 @@ const props = { ...Astro.props } as Props;
 
   @media (max-width: 1001px) {
     img {
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-sm);
     }
 
     .image-container {
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-sm);
     }
   }
 </style>
