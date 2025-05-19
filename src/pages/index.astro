@@ -28,8 +28,8 @@ const otherNotes = notes.slice(1);
       <section class="app-container">
         <!-- <AppHeader /> -->
 
-        <div class="logo-section">
-          <img src="/favicon.svg" alt="Logo" />
+        <div class="logo-container">
+          <img src="/favicon.svg" alt="Logo" class="logo" />
         </div>
 
         <div class="app-header">
@@ -61,27 +61,23 @@ const otherNotes = notes.slice(1);
     </main>
 
     <style>
-      .logo-section {
+      .logo-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 4rem 0;
-        margin-top: 2rem;
+        padding: 2rem 0;
       }
 
-      .logo-section img {
-        width: 8rem;
-        height: 8rem;
+      .logo {
+        width: 12rem;
+        height: 12rem;
+        color: var(--text-light);
       }
 
       @media (max-width: 720px) {
-        .logo-section {
-          padding: 2rem 0;
-        }
-
-        .logo-section img {
-          width: 6rem;
-          height: 6rem;
+        .logo {
+          width: 8rem;
+          height: 8rem;
         }
       }
     </style>
