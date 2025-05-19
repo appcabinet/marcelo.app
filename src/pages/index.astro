@@ -7,6 +7,7 @@ import AppHeader from '../components/AppHeader.astro';
 import AppFooter from '../components/AppFooter.astro';
 import NoteList from '../components/note/NoteList.astro';
 import LatestNote from '../components/note/LatestNote.astro';
+import LogoIcon from '../components/LogoIcon.astro';
 import '../styles/app.css';
 
 const notes: CollectionEntry<'notes'>[] = (await getCollection('notes')).sort(
@@ -29,7 +30,11 @@ const otherNotes = notes.slice(1);
         <!-- <AppHeader /> -->
 
         <div class="logo-container">
-          <img src="/favicon.svg" alt="Logo" class="logo" />
+          <LogoIcon 
+            color="var(--text-lighter)" 
+            size="7rem" 
+            opacity={0.9} 
+          />
         </div>
 
         <div class="app-header">
@@ -66,19 +71,7 @@ const otherNotes = notes.slice(1);
         justify-content: center;
         align-items: center;
         padding: 2rem 0;
-      }
-
-      .logo {
-        width: 12rem;
-        height: 12rem;
-        color: var(--text-light);
-      }
-
-      @media (max-width: 720px) {
-        .logo {
-          width: 8rem;
-          height: 8rem;
-        }
+        margin-top: 2rem;
       }
     </style>
   </body>
