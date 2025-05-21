@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 interface Props {
   note: CollectionEntry<'notes'>;
@@ -71,7 +72,7 @@ const publishedString = new Date(note.data.published).toLocaleDateString('en-US'
     border-radius: 4px;
   }
 
-  .cover-image img {
+  .cover-image :global(img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -116,10 +117,12 @@ const publishedString = new Date(note.data.published).toLocaleDateString('en-US'
 <a class="latest-note" href={`/${note.id}`}>
   {note.data.coverImage && (
     <div class="cover-image">
-      <img 
-        src={note.data.coverImage} 
+      <Image 
+        src={note.data.coverImage}
         alt={note.data.title}
-        loading="lazy"
+        width={200}
+        height={200}
+        quality="mid"
       />
     </div>
   )}

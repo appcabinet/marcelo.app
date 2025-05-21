@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content';
 
 const notes = defineCollection({
 	loader: glob({ base: './src/content/notes', pattern: '**/*.{md,mdx}' }),
-	schema: z.object({
+	schema: ({ image }) => z.object({
 		title: z.string(),
 		description: z.string().optional(),
 		published: z.coerce.date(),
@@ -13,7 +13,7 @@ const notes = defineCollection({
 		noteType: z.enum(['note', 'article', 'essay']).optional().default('note'),
 		aside: z.boolean().optional().default(false),
 		draft: z.boolean().optional().default(false),
-		coverImage: z.string().optional(),
+		coverImage: image().optional(),
 		imageAlt: z.string().optional(),
 	}),
 });
