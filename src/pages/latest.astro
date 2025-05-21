@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+
+const notes2 = await getCollection('notes');
+
+console.log(notes2);
+
+const notes = (await getCollection('notes')).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
+);
+
+const latestNote = notes[0];
+return Astro.redirect(`/${latestNote.id}`);
+---

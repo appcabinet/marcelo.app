@@ -17,7 +17,7 @@
   font-weight: 600;
   margin: 0;
   margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.6rem;
 }
 
 .app-header .description {
@@ -32,6 +32,8 @@
 @media (max-width: 720px) {
   .app-header .title {
     font-size: var(--header-size-mobile);
+    margin-top: 2rem;
+    margin-bottom: 2.2rem;
   }
 
   .app-header .description {
