@@ -13,6 +13,8 @@ const notes = defineCollection({
 		noteType: z.enum(['note', 'article', 'essay']).optional().default('note'),
 		aside: z.boolean().optional().default(false),
 		draft: z.boolean().optional().default(false),
+		coverImage: z.string().optional(),
+		imageAlt: z.string().optional(),
 	}),
 });
 
